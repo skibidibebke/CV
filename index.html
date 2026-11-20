@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mijn CV | Student</title>
+    <meta name="description" content="Bekijk mijn online CV en ontdek meer over mijn opleiding, vaardigheden en persoonlijke eigenschappen.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* Navigatie */
+
+        header {
+            background: #101d35;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #75baff;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #75baff;
+        }
+
+        /* Introductie */
+
+        .hero {
+            background: #101d35;
+            color: white;
+            min-height: 470px;
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero .subtitle {
+            color: #75baff;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 65px);
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #75baff;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #d0dbea;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #4b9bea;
+            color: white;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #287acb;
+            transform: translateY(-2px);
+        }
+
+        /* Algemene secties */
+
+        section:not(.hero) {
+            padding: 75px 10%;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
+            color: #142746;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 4px;
+            background: #4b9bea;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .about-text {
+            max-width: 750px;
+            color: #526174;
+        }
+
+        /* Opleiding */
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            border-left: 4px solid #4b9bea;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            max-width: 650px;
+        }
+
+        .education-card h3 {
+            color: #142746;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #64748b;
+        }
+
+        /* Vaardigheden */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #e2efff;
+            color: #174c83;
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Eigenschappen */
+
+        .qualities {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+
+        .quality {
+            background: white;
+            padding: 22px;
+            border-radius: 9px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .quality h3 {
+            color: #174c83;
+            margin-bottom: 8px;
+        }
+
+        .quality p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Contact */
+
+        #contact {
+            background: #eaf1fa;
+        }
+
+        #contact p {
+            color: #526174;
+        }
+
+        footer {
+            background: #101d35;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* Mobiele apparaten */
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 80px 7%;
+            }
+
+            section:not(.hero) {
+                padding: 55px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigatie -->
+
+    <header>
+        <div class="logo">Mijn CV.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#over">Over mij</a>
+            <a href="#opleiding">Opleiding</a>
+            <a href="#vaardigheden">Vaardigheden</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Introductie -->
+
+    <section class="hero" id="home">
+
+        <p class="subtitle">Welkom op mijn website</p>
+
+        <h1>Hallo, ik ben <span>Mijn naam</span>.</h1>
+
+        <p>
+            Ik ben een student die graag nieuwe dingen leert,
+            zichzelf ontwikkelt en nieuwe uitdagingen aangaat.
+            Op deze website vind je meer informatie over mij.
+        </p>
+
+        <a href="#over" class="button">
+            Bekijk mijn CV →
+        </a>
+
+    </section>
+
+    <!-- Over mij -->
+
+    <section id="over">
+
+        <h2 class="section-title">Over mij</h2>
+
+        <div class="about-text">
+
+            <p>
+                Mijn naam is Mijn naam en ik ben student.
+                Ik vind het belangrijk om mezelf te blijven
+                ontwikkelen en nieuwe kennis en vaardigheden
+                op te doen.
+            </p>
+
+            <p>
+                Ik sta open voor nieuwe ervaringen en vind
+                het interessant om mezelf zowel persoonlijk
+                als professioneel verder te ontwikkelen.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Opleiding -->
+
+    <section id="opleiding">
+
+        <h2 class="section-title">Mijn opleiding</h2>
+
+        <div class="education-card">
+
+            <h3>Mijn opleiding</h3>
+
+            <p>
+                Naam opleiding: Vul hier je opleiding in
+            </p>
+
+            <p>
+                Onderwijsinstelling: Vul hier je school in
+            </p>
+
+            <p>
+                Periode: Vul hier je studieperiode in
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Vaardigheden -->
+
+    <section id="vaardigheden">
+
+        <h2 class="section-title">Vaardigheden</h2>
+
+        <div class="skills">
+
+            <div class="skill">Communicatie</div>
+            <div class="skill">Samenwerken</div>
+            <div class="skill">Probleemoplossend denken</div>
+            <div class="skill">Organisatie</div>
+            <div class="skill">Leergierig</div>
+
+        </div>
+
+    </section>
+
+    <!-- Persoonlijke eigenschappen -->
+
+    <section id="eigenschappen">
+
+        <h2 class="section-title">
+            Persoonlijke eigenschappen
+        </h2>
+
+        <div class="qualities">
+
+            <div class="quality">
+                <h3>Leergierig</h3>
+                <p>
+                    Ik sta open voor nieuwe kennis
+                    en ervaringen.
+                </p>
+            </div>
+
+            <div class="quality">
+                <h3>Gemotiveerd</h3>
+                <p>
+                    Ik probeer mijn doelen te bereiken
+                    en mezelf te verbeteren.
+                </p>
+            </div>
+
+            <div class="quality">
+                <h3>Betrouwbaar</h3>
+                <p>
+                    Ik vind het belangrijk om afspraken
+                    en verantwoordelijkheden serieus te nemen.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p>
+            Wil je meer over mij weten?
+            Dan kun je contact met mij opnemen.
+        </p>
+
+        <p>
+            E-mailadres: Vul hier je e-mailadres in
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Mijn CV. Alle rechten voorbehouden.
+        </p>
+
+    </footer>
+
+</body>
+</html>
